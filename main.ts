@@ -22,11 +22,6 @@ input.onButtonPressed(Button.AB, function () {
 })
 radio.onReceivedString(function (receivedString) {
     for (let index = 0; index < 4; index++) {
-        if (receivedString == "ALT RETT") {
-            soundExpression.happy.playUntilDone()
-        } else {
-            soundExpression.sad.playUntilDone()
-        }
         basic.showString(receivedString)
     }
 })
