@@ -22,6 +22,11 @@ input.onButtonPressed(Button.AB, function () {
 })
 radio.onReceivedString(function (receivedString) {
     for (let index = 0; index < 4; index++) {
+        if (receivedString == "ALT RETT") {
+            soundExpression.happy.playUntilDone()
+        } else {
+            soundExpression.sad.playUntilDone()
+        }
         basic.showString(receivedString)
     }
 })
@@ -34,4 +39,7 @@ input.onButtonPressed(Button.B, function () {
 basic.forever(function () {
     Produkt = Kopp * Krus
     radio.setGroup(Produkt)
+    if (Kopp == 10) {
+        basic.showString("TRYKK A+B")
+    }
 })
